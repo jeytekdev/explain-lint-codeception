@@ -1,0 +1,52 @@
+{
+    "name": "jeytekdev/explain-lint-codeception",
+    "description": "Codeception bridge for jeytekdev/explain-lint — analyzes and reports captured queries via a Codeception\\Extension, for projects whose tests run through codecept run instead of vendor/bin/phpunit.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "codeception",
+        "sql",
+        "explain",
+        "testing",
+        "query-analysis"
+    ],
+    "homepage": "https://github.com/jeytekdev/explain-lint-codeception",
+    "support": {
+        "issues": "https://github.com/jeytekdev/explain-lint-codeception/issues",
+        "source": "https://github.com/jeytekdev/explain-lint-codeception"
+    },
+    "authors": [
+        {
+            "name": "Jeytekdev",
+            "homepage": "https://github.com/jeytekdev"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "jeytekdev/explain-lint": "^1.0",
+        "codeception/codeception": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5 || ^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ExplainLint\\Codeception\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ExplainLint\\Codeception\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
