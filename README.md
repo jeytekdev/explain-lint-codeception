@@ -38,7 +38,13 @@ extensions:
 
 `config` is optional and defaults to `explain-lint.php` in the working directory `codecept run` is invoked from — same config file format as core, see the [core README](../core/README.md#configuration).
 
-Do **not** also run `vendor/bin/explain-lint explain-lint:install` for a Codeception project — it registers the PHPUnit extension in `phpunit.xml`, which this package makes unnecessary (and which Codeception ignores anyway). Create `explain-lint.php` by hand, or copy `packages/core/stubs/explain-lint.php.stub`.
+Create `explain-lint.php` with:
+
+```bash
+vendor/bin/explain-lint explain-lint:install --config-only
+```
+
+`--config-only` skips the `phpunit.xml` registration step from the plain `explain-lint:install` — running that step for a Codeception project would edit a file Codeception never reads (see above), so don't run it without the flag here.
 
 Then run your suite as usual:
 
