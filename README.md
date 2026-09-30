@@ -2,6 +2,11 @@
 
 Codeception bridge for [jeytekdev/explain-lint](../core/README.md) — re-runs `EXPLAIN` against every query your test suite executes, and fails the build on full table scans, lost indexes, filesort and temporary tables.
 
+**This package only triggers analysis/reporting — it does not capture queries
+by itself.** Without one of the capture adapters below installed and
+configured, every run reports "0 issues", indistinguishable from a clean
+pass.
+
 ## Why this package exists
 
 [`packages/core`](../core/README.md)'s reporting/analysis pipeline is a PHPUnit extension, registered via `<extensions>` in `phpunit.xml` and driven by PHPUnit's native `Runner\Extension`/`Event` system.
