@@ -2,30 +2,30 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Codeception;
+namespace Jeytekdev\ExplainLint\Codeception;
 
 use Codeception\Event\PrintResultEvent;
 use Codeception\Event\TestEvent;
 use Codeception\Events;
 use Codeception\Extension;
-use ExplainLint\Adapter\MySqlAdapter;
-use ExplainLint\Adapter\PostgresAdapter;
-use ExplainLint\Adapter\SqliteNoopAdapter;
-use ExplainLint\Config\Config;
-use ExplainLint\Config\ConfigLoader;
-use ExplainLint\Engine\ExplainRunner;
-use ExplainLint\PHPUnit\TestAnalysisRunner;
-use ExplainLint\Recorder\QueryLedger;
-use ExplainLint\Recorder\QueryRecorder;
-use ExplainLint\Report\ConsoleReporter;
-use ExplainLint\Report\GithubAnnotationsReporter;
-use ExplainLint\Report\JUnitReporter;
-use ExplainLint\Report\ResultCollector;
-use ExplainLint\Rules\RuleEngine;
+use Jeytekdev\ExplainLint\Adapter\MySqlAdapter;
+use Jeytekdev\ExplainLint\Adapter\PostgresAdapter;
+use Jeytekdev\ExplainLint\Adapter\SqliteNoopAdapter;
+use Jeytekdev\ExplainLint\Config\Config;
+use Jeytekdev\ExplainLint\Config\ConfigLoader;
+use Jeytekdev\ExplainLint\Engine\ExplainRunner;
+use Jeytekdev\ExplainLint\PHPUnit\TestAnalysisRunner;
+use Jeytekdev\ExplainLint\Recorder\QueryLedger;
+use Jeytekdev\ExplainLint\Recorder\QueryRecorder;
+use Jeytekdev\ExplainLint\Report\ConsoleReporter;
+use Jeytekdev\ExplainLint\Report\GithubAnnotationsReporter;
+use Jeytekdev\ExplainLint\Report\JUnitReporter;
+use Jeytekdev\ExplainLint\Report\ResultCollector;
+use Jeytekdev\ExplainLint\Rules\RuleEngine;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
 /**
- * Codeception-native equivalent of ExplainLint\PHPUnit\ExplainLintExtension.
+ * Codeception-native equivalent of Jeytekdev\ExplainLint\PHPUnit\ExplainLintExtension.
  *
  * Codeception 5 does not read `phpunit.xml` and does not bootstrap PHPUnit's
  * native `Runner\Extension\Extension` mechanism — `Codeception\Suite` builds
@@ -43,9 +43,9 @@ use Symfony\Component\Console\Output\ConsoleOutput;
  *
  *   extensions:
  *       enabled:
- *           - ExplainLint\Codeception\ExplainLintExtension
+ *           - Jeytekdev\ExplainLint\Codeception\ExplainLintExtension
  *       config:
- *           ExplainLint\Codeception\ExplainLintExtension:
+ *           Jeytekdev\ExplainLint\Codeception\ExplainLintExtension:
  *               config: explain-lint.php
  */
 final class ExplainLintExtension extends Extension
@@ -70,7 +70,7 @@ final class ExplainLintExtension extends Extension
     /**
      * `Extension::$config` (the raw config array from codeception.yml) is
      * only populated by the parent constructor, which runs before this — so
-     * the resolved ExplainLint\Config\Config object is built here, in a
+     * the resolved Jeytekdev\ExplainLint\Config\Config object is built here, in a
      * differently-named property, rather than in the constructor.
      */
     public function _initialize(): void

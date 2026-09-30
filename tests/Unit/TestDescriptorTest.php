@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ExplainLint\Codeception\Tests\Unit;
+namespace Jeytekdev\ExplainLint\Codeception\Tests\Unit;
 
 use Codeception\Test\Interfaces\Descriptive;
-use ExplainLint\Codeception\TestDescriptor;
+use Jeytekdev\ExplainLint\Codeception\TestDescriptor;
 use PHPUnit\Framework\TestCase;
 
 final class TestDescriptorTest extends TestCase

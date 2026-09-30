@@ -15,7 +15,7 @@ pass.
 
 So if your project runs tests via `vendor/bin/codecept run` (the default for the Yii2 basic/advanced templates, and common with Laravel/Symfony too) — as opposed to `vendor/bin/phpunit` directly — installing `jeytekdev/explain-lint`'s PHPUnit extension alone does nothing: query capture (via the Laravel/Doctrine/Yii2 bridge) still works, but no `EXPLAIN` ever runs and no report is ever produced, silently.
 
-This package re-implements the same subscriber wiring as a `Codeception\Extension`, registered in `codeception.yml` instead of `phpunit.xml`, using Codeception's own event dispatcher. It reuses `ExplainLint\PHPUnit\TestAnalysisRunner` and `ExplainLint\Report\*` from core unchanged — only the event source differs.
+This package re-implements the same subscriber wiring as a `Codeception\Extension`, registered in `codeception.yml` instead of `phpunit.xml`, using Codeception's own event dispatcher. It reuses `Jeytekdev\ExplainLint\PHPUnit\TestAnalysisRunner` and `Jeytekdev\ExplainLint\Report\*` from core unchanged — only the event source differs.
 
 ## Install (2 minutes)
 
@@ -28,16 +28,16 @@ You still need a capture adapter for your stack — this package only handles an
 - [Laravel](https://github.com/jeytekdev/explain-lint/blob/master/packages/laravel/README.md) — `jeytekdev/explain-lint-laravel`
 - [Symfony / Doctrine DBAL](https://github.com/jeytekdev/explain-lint/blob/master/packages/doctrine/README.md) — `jeytekdev/explain-lint-doctrine`
 - [Yii2](https://github.com/jeytekdev/explain-lint/blob/master/packages/yii2/README.md) — `jeytekdev/explain-lint-yii2`
-- Bare PDO — [`ExplainLint\Pdo\ExplainLintPdo`](https://github.com/jeytekdev/explain-lint/blob/master/packages/core/README.md#bare-pdo-2-minutes)
+- Bare PDO — [`Jeytekdev\ExplainLint\Pdo\ExplainLintPdo`](https://github.com/jeytekdev/explain-lint/blob/master/packages/core/README.md#bare-pdo-2-minutes)
 
 Register the extension in `codeception.yml` (or a per-suite `<suite>.suite.yml` if you only want it on one suite):
 
 ```yaml
 extensions:
     enabled:
-        - ExplainLint\Codeception\ExplainLintExtension
+        - Jeytekdev\ExplainLint\Codeception\ExplainLintExtension
     config:
-        ExplainLint\Codeception\ExplainLintExtension:
+        Jeytekdev\ExplainLint\Codeception\ExplainLintExtension:
             config: explain-lint.php
 ```
 
